@@ -37,8 +37,8 @@ raw = pd.DataFrame({"order_date": date, "category": cat, "region": reg, "unit_pr
                     "units_sold": units})
 raw["revenue"] = (raw.units_sold * raw.unit_price * (1 - raw.discount_pct / 100)).round(2)
 raw = pd.concat([raw, raw.sample(300, random_state=1)], ignore_index=True)  # duplicates
-for col, frac in [("unit_price", .04), ("discount_pct", .05), ("promo_flag", .03), ("region", .04), ("units_sold", .02)]:
-    raw.loc[raw.sample(frac=frac, random_state=hash(col) % 1000).index, col] = np.nan  # ~ messy
+for i, (col, frac) in enumerate([("unit_price", .04), ("discount_pct", .05), ("promo_flag", .03), ("region", .04), ("units_sold", .02)]):
+    raw.loc[raw.sample(frac=frac, random_state=100 + i).index, col] = np.nan  # fixed seeds -> reproducible
 out_idx = raw.sample(150, random_state=3).index
 raw.loc[out_idx, "units_sold"] *= 12  # outliers
 raw.to_csv("data/raw_sales.csv", index=False)
