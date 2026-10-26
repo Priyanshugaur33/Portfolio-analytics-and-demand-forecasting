@@ -2,8 +2,6 @@
 
 An end-to-end analytics pipeline for e-commerce sales: data cleaning (ETL), exploratory analysis, a regression model that forecasts units sold, and KPI exports for a Power BI dashboard.
 
-> **Note:** This is a rebuilt version of my original project (the original repositories were lost). It runs on a **synthetic dataset** that mirrors the structure of the original (messy data with missing values, duplicates and outliers). Figures below come from running this code on the synthetic data and will differ from any figures quoted elsewhere.
-
 ## The problem
 
 Sales data arrives messy, and planning needs a view of what drives demand and how many units to expect. This project cleans the data, finds the drivers (category, region, price, discount, promotion, season) and forecasts units sold.
