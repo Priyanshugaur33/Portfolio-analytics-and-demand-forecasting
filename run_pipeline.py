@@ -1,8 +1,3 @@
-"""Portfolio Analytics & Demand Forecasting (E-commerce) - end-to-end pipeline.
-
-Steps: generate messy data (15,000+ rows, 5+ categories, 4 regions) -> ETL/cleaning (~12% missing,
-duplicates, outliers) -> EDA -> regression forecasting model -> KPI exports for Power BI.
-"""
 import numpy as np
 import pandas as pd
 import matplotlib
